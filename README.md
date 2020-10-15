@@ -12,10 +12,22 @@ Even if you decide you don't want to use the SoupX correction methods for whatev
 
 ## Installation
 
-The package can be installed by running
+The latest stable release can be installed from CRAN in the usual way by running,
 
 ```R
-devtools::install_github("constantAmateur/SoupX")
+install.packages('SoupX')
+```
+
+If you want to use the latest development version, install it by running,
+
+```R
+devtools::install_github("constantAmateur/SoupX",ref='devel')
+```
+
+Finally, if you want to use the per-cell contamination estimation (which you almost certainly won't need to), install the branch STAN
+
+```R
+devtools::install_github("constantAmateur/SoupX",ref='STAN')
 ```
 
 If you encounter errors saying `multtest` is unavailable, please install this manually from bioconductor with:
@@ -50,7 +62,7 @@ out = adjustCounts(sc)
 
 The methodology implemented in this package is explained in detail in [this paper](https://doi.org/10.1101/303727).  
 
-A detailed vignette is provided with the package and can be viewed [here](https://rawcdn.githack.com/constantAmateur/SoupX/650f7fa30b6c985486953b9ef8858c17fe7df68a/inst/doc/pbmcTutorial.html).  
+A detailed vignette is provided with the package and can be viewed [here](https://rawcdn.githack.com/constantAmateur/SoupX/6be48cdb0950ed145a3ca6cf235ec2c24d626f81/inst/doc/pbmcTutorial.html).  
 
 ## Frequently Asked Questions
 
@@ -76,7 +88,7 @@ At this point we assume that you have chosen a set (or sets) of genes to use to 
 
 ## Changelog
 
-### v1.4.0 
+### v1.4.5 
 
 First CRAN version of the code.  The one significant change other than tweaks to reach CRAN compatibility is that the correction algorithm has been made about 20 times faster.  As such, the parallel option was no longer needed and has been removed. Also includes some other minor tweaks.
 
